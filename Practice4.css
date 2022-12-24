@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
+
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+  
+}
+
+header{
+    background-color: #136c72;
+    padding: .5em 0;
+}
+
+
+.aws{
+    color: white;
+    font-size: 3rem;
+    padding: 0 .3em
+}
+
+.nav_list{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    text-align: center;
+    row-gap: 1.3rem;
+    padding-top: 2rem;
+}
+
+.nav_push-buttom{
+    margin-top: 2em;
+}
+
+/* Pada nav link tidak bisa diberikan margin atau jarak dikarenakan default displaynya inline */
+.nav_link{
+    text-decoration: none;
+    color: white;
+}
+
+.nav_link:hover{
+    opacity: .7;
+}
+
+.nav_link-button{
+    background-color: white;
+    color:#23424A;
+    padding: .3em .8em;
+    border-radius: 1em;
+}
+
+.nav_toggle{
+    display: inline-flex;
+    font-size: 1.5em;
+    color: white;
+    justify-content: space-between;
+    cursor: pointer;
+    align-items: center;
+}
+
+.nav_close{
+    position: absolute;
+    font-size: 2em;
+    color: white;
+    right: .5em;  top: .2em;
+}
+
+.nav_close:hover{
+    opacity: .7;
+}
+
+.header_content{
+    margin-top: 0;
+}
+
+.header{
+    padding: 3.5em 0;
+    background-color: #23424A;
+}
+
+.container{
+    width: 80%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.rows{
+    display: flex;
+    justify-content: space-between;
+}
+
+.innercontent{
+    max-width: 1000px;
+    color: white;
+    width: 60%;
+}
+
+.button{
+    display: inline-block;
+    margin-top: 1rem;
+    background-color: rgb(39, 185, 198);
+    text-decoration: none;
+    color: #23424A;
+    padding: .8em 2em;
+    border-radius: 2em;
+    margin-bottom: 2rem;
+}
+
+.button:hover{
+    opacity: .6;
+}
+
+.image_content{
+    display: flex;
+    width: 70%;
+    height: 70%;
+    margin-left: 1rem;
+    justify-content: flex-end;
+}
+
+.two_col{
+    margin: 2em 0;
+}
+
+.h2_two_col{
+    color: #0e5f74;
+    justify-content: space-between;
+}
+
+.content_col{
+    width: 53%;
+    margin-right: 1.5rem;
+}
+
+.benefit{
+    width: 30%;
+    background-color: #136c72;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+
+
+
+
+/* Media screen biasanya diletakkan di paling bawah dimulai dari min-width terkecil ke terbesar (sangat penting!) */
+@media screen and (max-width: 640px) {
+
+    .nav_menu{
+        position: fixed;
+        background-color: #136c72;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 15;
+    }
+}
+
+.show-menu{
+    right: 0;
+}
+
+
+@media screen and (min-width: 641px) {
+    .nav_close, .nav_toggle{
+        display: none;
+    }
+
+    .navigation{
+        justify-content: space-between;
+    }
+
+    .nav_push-buttom{
+        margin-top: 0;
+    }
+
+    .nav_list{
+        flex-direction: row;
+        column-gap: 1rem;
+        padding-top: 0;
+        justify-items: center;
+    }
+
+    .fixed{
+        padding-right: 2rem;
+    }
+}
+
+
+/* Flex grow berarti membesar sehingga defaultnya 0 yaitu tidak bisa membesar sedangkan flex shrink semakin mengecil/menyusut sehingga defaultnya 1 ketika website dikecilkan maka iconnya akan mengecil */
+
+/* Width 100% agar nav nya bisa memanfaatkan seluruh space sehingga home menjadi berdekatan dengan logo aws atau bisa juga dengan memakai flex grow. Default flex grow = 0;*/
+
+
+/* Memberikan deklarasi untuk memberi tahu kegunaannya */
+/* @mixin for-phone-only{
+    @media (max-width: 599px)
+    { @content; }
+}
+@mixin for-tablet-portrait-up {
+    @media (min-width: 600px) 
+    { @content; }
+}
+@mixin for-tablet-landscape-up {
+    @media (min-width: 900px) 
+    { @content; }
+}
+@mixin for-desktop-up {
+    @media (min-width: 1200px) 
+    { @content; }
+}
+@mixin for-big-desktop-up {
+    @media (min-width: 1800px)
+    { @content; }
+} */
+
+/* usage */
+/* .my-box {
+  padding: 10px;
+  
+  @include for-desktop-up {
+    padding: 20px;
+  }
+} */
+
+/* Pada yang diatas mixin nya terlalu banyak sehingga dapat dibuat lebih simple */
+/* @mixin for-size($size){
+    @if $size == phone-only{
+        @media (max-width: 599px){@content}
+    }
+    @else if $size == table-potrait-up{
+        @media (min-width: 600px){@content}
+    }
+    @else if $size == table-landscape-up{
+        @media (min-width: 900px){@content}
+    }
+    @else if $size == desktop-up{
+        @media (min-width: 1200px){@content}
+    }
+    @else if $size == big-desktop-up{
+        @media (min-width: 1800px){@content}
+    }
+} */
+
+/* Usage */
+/* .my-box {
+    padding: 10px;
+    
+    @include for-size(desktop-up) {
+        padding: 20px;
+    }
+  } */
