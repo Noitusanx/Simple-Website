@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@700&display=swap');
+
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    margin: 0;
+}
+
+h1{
+    font-family: 'Oswald', sans-serif;
+    font-size: 90px;
+    font-weight: 700;
+    color: white;
+}
+
+h3{
+    font-family: 'Oswald', sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    opacity: .7;
+}
+
+header{
+    background-color: #2E323F;
+}
+
+.navigation{
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo{
+    margin-top: .1rem;
+    color: white;
+    font-size: 3rem;
+    display: flex;
+}
+
+.nav_toggle{
+    font-size: 2rem;
+    color: white;
+    display: inline-flex;
+    justify-content: space-between;
+    margin-top: .5rem;
+    cursor: pointer;
+}
+
+.nav_close{
+    font-size: 2rem;
+    color: white;
+    position: absolute;
+    right: 4.5rem; top: .5rem;
+}
+
+/* Jika memakai visibility maka ia hanya tidak keliatan namun ukuran marginnya masih tetap ada */
+
+/* Membuat background pada nav_menu sehingga itemnya memiliki background yang tinggi dan lebarnya sesuai dan memberikan z-index pada logo dan toggle sehingga menjadi terlihat */
+
+.nav_menu{
+    position: fixed;
+    background-color: #2E323F;
+    right: -100%;
+    width: 100%;
+}
+
+.show-menu{
+    right: 0;
+}
+
+.nav_list{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    align-items: center;
+}
+
+.nav_link{
+    font-family: 'Oswald', sans-serif;
+    color: white;
+    font-size: 1rem;
+}
+
+.nav_item{
+    margin: 1em;
+    margin-bottom: 0;
+}
+
+.container{
+    width: 80%;
+    max-width: 1100px;
+    font-size: 18px;
+    margin: 0 auto;
+}
+
+.active{
+    background-color: #A59678;
+    padding: .3em 1.3em;
+    border-radius: 1rem;
+}
+
+.header{
+    background-color: #3B4050;
+    padding: 1rem 0 5rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.title span{
+    color: #A59678;
+}
+
+.justify{
+    justify-content: space-between;
+}
+
+.title{
+    max-width: 1000px;
+    width: 40%;
+    line-height: 1;
+}
+
+.rows{
+    display: flex;
+    flex-direction: column;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.info{
+    justify-content: space-between;
+}
+
+.content_title{
+    width: 48%;
+    color: white;
+    padding-top: 0;
+    font-size: 24px;
+}
+
+.button{
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #A59678;
+    padding: .1em .5em;
+    border-radius: .8em;
+}
+
+.benefit{
+    background-color: #6F737F;
+    padding: 4em 0;
+}
+
+.benefit h2{
+    color: #A59678;
+    font-family: 'Oswald', sans-serif;
+    font-size: 30px;
+}
+
+.content{
+    text-align: center;
+    padding-right: 5rem;
+}
+
+.explanation h2{
+    color: #A59678;
+    font-family: 'Oswald', sans-serif;
+    font-size: 36px;
+}
+
+.text{
+    font-size: 21px;
+    color: black;
+}
+
+.images{
+    width: 100%;
+}
+
+.inner_colomn{
+    background-color: #3B4050;
+    text-align: center;
+    margin-top: 2.5em;
+    padding: .2em 2em 2em 2em;
+}
+
+.inner_colomn h2, p{
+    color: white;
+}
+
+.inner_colomn h2{
+    font-size: 30px;
+}
+
+.surface{
+    background-color: #3B4050;
+}
+
+.surface h1{
+    padding-top: .7em;
+    font-size: 44px;
+    text-align: center;
+}
+
+.info p{
+    color: white;
+    font-size: 16px;
+}
+
+.info h3{
+    color: #A59678;
+    font-size: 21px;
+}
+
+.about{
+    width: 40%;
+}
+
+.align{
+    line-height: 2.5rem;
+}
+
+
+@media screen and (min-width: 760px) {
+    .nav_toggle{
+        display: none;
+    }
+
+    .navigation{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .nav_list{
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    .nav_menu{
+        right: 0;
+        position: absolute;
+    }
+
+    .nav_item{
+        margin-bottom: 1rem;
+    }
+
+    .rows{
+        flex-direction: row;
+    }
+
+    .content_title{
+        align-self: flex-end;
+        padding-bottom: 4rem;
+    }
+
+    .grid{
+        display: flex;
+    }
+
+    .button{
+        font-size: 24px;
+        padding: .3em 1.3em;
+        border-radius: 1em;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .colomn{
+    display: flex;
+    column-gap: 1.5rem;
+    }
+}
